@@ -6,3 +6,6 @@
 3. forge install OpenZeppelin/openzeppelin-contracts
 
 Deploy: yarn hardhat run scripts/deploy.js --network base-sepolia
+
+## Verify Contract
+yarn hardhat verify --network base-sepolia DEPLOYED_CONTRACT_ADDRESS
