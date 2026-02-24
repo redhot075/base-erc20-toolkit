@@ -1,0 +1,1 @@
+const hre = require("hardhat");\n\nasync function main() {\n  const BaseToken = await hre.ethers.getContractFactory("BaseToken");\n  const baseToken = await BaseToken.deploy();\n  await baseToken.waitForDeployment();\n  console.log("BaseToken deployed to:", await baseToken.getAddress());\n}\n\nmain().catch((error) => {\n  console.error(error);\n  process.exitCode = 1;\n});
