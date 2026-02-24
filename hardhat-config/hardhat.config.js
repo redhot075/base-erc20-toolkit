@@ -1,11 +1,1 @@
-require("@nomicfoundation/hardhat-verify");
-
-module.exports = {
-  solidity: "0.8.20",
-  networks: {
-    baseSepolia: {
-      url: "https://sepolia.base.org",
-      accounts: ["YOUR_PRIVATE_KEY"]
-    }
-  }
-};
+require("@nomicfoundation/hardhat-toolbox");\n\n/** @type import("hardhat/config").HardhatUserConfig */\nmodule.exports = {\n  solidity: "0.8.20",\n  networks: {\n    baseSepolia: {\n      url: "https://sepolia.base.org",\n      accounts: ["YOUR_PRIVATE_KEY"],\n    },\n  },\n};
