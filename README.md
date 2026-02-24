@@ -1,32 +1,30 @@
-# ERC20 Toolkit for Base L2
+# Base ERC20 Toolkit
 
-## Quick Deploy
-1. yarn init -y
-2. npx hardhat init
-3. forge install OpenZeppelin/openzeppelin-contracts
+ERC20 token starter for Base L2 (Sepolia/Mainnet). Deploy + mint tokens.
 
-Deploy: yarn hardhat run scripts/deploy.js --network base-sepolia
+## Quick Start
 
-## Verify Contract
-yarn hardhat verify --network base-sepolia DEPLOYED_CONTRACT_ADDRESS
-## Verification
+1. **Install:**
+   ```
+   npm init -y
+   npm i hardhat @nomicfoundation/hardhat-toolbox @openzeppelin/contracts
+   ```
 
-1. Build: `npx hardhat compile`
-2. Deploy: `npx hardhat run scripts/deploy.js --network baseSepolia`
-3. Verify: Etherscan Base Sepolia (paste tx hash)
+2. **Config:** Edit `hardhat-config/hardhat.config.js` (private key).
 
-Scripts/deploy.js:
-```js
-const hre = require("hardhat");
+3. **Deploy:**
+   ```
+   npx hardhat run scripts/deploy.js --network baseSepolia
+   ```
 
-async function main() {
-  const BaseToken = await hre.ethers.getContractFactory("BaseToken");
-  const baseToken = await BaseToken.deploy();
-  await baseToken.waitForDeployment();
-  console.log("BaseToken deployed to:", await baseToken.getAddress());
-}
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
-```
+## Guide
+
+### Deploy
+- Compile: `npx hardhat compile`
+- Deploy: `npx hardhat run scripts/deploy.js --network baseSepolia`
+- Verify: Base Sepolia explorer.
+
+### Contract
+- `BaseToken.sol`: ERC20 with mint.
+
+**Base ready!** 🚀
